@@ -1,11 +1,22 @@
 {
   "name": "emoji-datasource-split",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.3",
+  "description": "Emoji data and images split",
   "main": "emoji.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zeddz92/emoji-datasource-split.git"
+  },
+  "author": "zeddz92",
+  "keywords": [
+    "emoji"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeddz92/emoji-datasource-split/issues"
+  },
+  "homepage": "https://github.com/zeddz92/emoji-datasource-split#readme"
 }
