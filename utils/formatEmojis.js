@@ -86,6 +86,7 @@ const resultCustom = customEmojis.reduce((acc, emoji) => {
       sheetX: data.sheet_x,
       sheetY: data.sheet_y,
       skinVariations,
+      version: parseFloat(data.added_in),
       img: data.img,
     });
   }
