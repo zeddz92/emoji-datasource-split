@@ -22,7 +22,7 @@ Every grid has 5 rows and 5 columns of emojis, but index start from 0 to 4.
 x: sheet_x * (100 / 4) // 4 = columns
 y: sheet_y * (100 / 4) // 4 = rows
 background-image: "emoji-1-1.png"
-background-size: 165px 165px;
+background-size: 510% 510%;
 ```
 
 The height and width of each chunk is `330x330` so the background-size is half of it
@@ -30,7 +30,7 @@ The height and width of each chunk is `330x330` so the background-size is half o
 ### Example of grid 5x5
 
 <div style="display: flex; margin-bottom: 10px; margin-top: 10px;">
-<img style="width:49%; border-right: 1px solid;"; src="https://raw.githubusercontent.com/zeddz92/emoji-datasource-split/main/img/sheets-clean/64/apple/emoji-2-7.png"/>
+<img style="width:49%; border-right: 2px solid lightgrey;"; src="https://raw.githubusercontent.com/zeddz92/emoji-datasource-split/main/img/sheets-clean/64/apple/emoji-2-7.png"/>
 <img style="width:49%"; src="https://raw.githubusercontent.com/zeddz92/emoji-datasource-split/main/img/sheets-clean/64/apple/emoji-7-3.png"/>
 </div>
 
@@ -69,5 +69,41 @@ The new list adds `img` property and changes `sheet_x` and `sheet_y` so to be fo
     "has_img_twitter": true,
     "has_img_facebook": false,
     "img": "emoji-1-1.png"
+  },
+```
+
+### Custom Object
+
+The original list has a lot of properties that users may not use such as `docomo`, `au`, or `non_qualified`, which makes the file bigger. This object strips those properties, replace `snake_case` for `camelCase`, add `keywords` for each one, and the native emoji.
+
+To make the file size smaller, you should:
+
+- Put the json object inside a `.js` file and use a formatter like `prettier` to remove the double quotes for each property.
+- Minify the file when you bundle your project.
+
+In the end It'll go from `1.1mB` to `654.2kB`
+
+```
+  {
+    "sheetX": 2,
+    "sheetY": 4,
+    "google": 1,
+    "twitter": 1,
+    "facebook": 1,
+    "apple": 1,
+    "native": "😂",
+    "name": "face with tears of joy",
+    "category": "Smileys & People",
+    "sortOrder": 8,
+    "keywords": [
+      "face",
+      "face with tears of joy",
+      "joy",
+      "laugh",
+      "tear"
+    ],
+    "description": "face with tears of joy",
+    "version": 0.6,
+    "img": "emoji-11-7.png"
   },
 ```
